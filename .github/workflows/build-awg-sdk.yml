@@ -119,9 +119,9 @@ jobs:
       - name: Build packages
         working-directory: ${{ env.OWRT_DIR }}
         run: |
-          make package/feeds/awgopenwrt/amneziawg-tools/{clean,download,prepare,compile} -j $(nproc)
-          make package/feeds/awgopenwrt/kmod-amneziawg/{clean,download,prepare,compile} -j $(nproc)
-          make package/feeds/awgopenwrt/luci-proto-amneziawg/{clean,download,prepare,compile} -j $(nproc)
+          make package/feeds/awgopenwrt/amneziawg-tools/{download,prepare,compile} -j $(nproc)
+          make package/feeds/awgopenwrt/kmod-amneziawg/{download,prepare,compile} -j $(nproc)
+          make package/feeds/awgopenwrt/luci-proto-amneziawg/{download,prepare,compile} -j $(nproc)
 
       - name: Prepare artifacts OpenWRT_v${{ matrix.tag }} ${{ matrix.build_env.target}}/${{ matrix.build_env.subtarget}}
         run: |
