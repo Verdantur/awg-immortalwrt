@@ -20,7 +20,7 @@ jobs:
         build_env:
           - pkgarch: aarch64_cortex-a53
             target: mediatek
-            subtarget: filogic
+            subtarget: mt7622
     permissions:
       contents: write
 
@@ -135,9 +135,9 @@ jobs:
       - name: Build packages
         working-directory: ${{ env.OWRT_DIR }}
         run: |
-          make package/feeds/awgopenwrt/amneziawg-tools/{download,prepare,compile} -j $(nproc)
-          make package/feeds/awgopenwrt/kmod-amneziawg/{download,prepare,compile} -j $(nproc)
-          make package/feeds/awgopenwrt/luci-proto-amneziawg/{download,prepare,compile} -j $(nproc)
+          make package/feeds/awgopenwrt/amneziawg-tools/compile -j $(nproc)
+          make package/feeds/awgopenwrt/kmod-amneziawg/compile -j $(nproc)
+          make package/feeds/awgopenwrt/luci-proto-amneziawg/compile -j $(nproc)
 
       - name: Prepare artifacts OpenWRT_v${{ matrix.tag }} ${{ matrix.build_env.target}}/${{ matrix.build_env.subtarget}}
         run: |
@@ -152,7 +152,7 @@ jobs:
       - name: Compose release body
         run: |
           cat > BODY.md <<EOF
-          Ipk's awg2.0 for OpenWRT **v${{ matrix.tag }}**
+          Ipk's awg2.0 for ImmortalWrt **v${{ matrix.tag }}**
 
           **Target:** \`${{ matrix.build_env.target }}/${{ matrix.build_env.subtarget }}\`
           **Arch:**   \`${{ matrix.build_env.pkgarch }}\`
@@ -168,7 +168,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ env.TAG }}
-          name: "AWG2.0 IPK's ${{ env.TAG }} (OpenWrt v${{ matrix.tag }} :: ${{ matrix.build_env.target }}/${{ matrix.build_env.subtarget }})"
+          name: "AWG2.0 IPK's ${{ env.TAG }} (ImmortalWrt v${{ matrix.tag }} :: ${{ matrix.build_env.target }}/${{ matrix.build_env.subtarget }})"
           body_path: BODY.md
           files: awgrelease/*.ipk
 
