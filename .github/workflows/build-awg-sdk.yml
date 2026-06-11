@@ -1,4 +1,4 @@
-name: Build AWG2.0 IPKs
+name: Build AWG2.0 APKs
 
 on:
   push:
@@ -145,14 +145,14 @@ jobs:
           out="${GITHUB_WORKSPACE}/awgrelease"
           mkdir -p "$out"
           postfix="${tag_name}_v${{ matrix.tag }}_${{ matrix.build_env.pkgarch}}_${{ matrix.build_env.target}}_${{ matrix.build_env.subtarget}}"
-          cp ${OWRT_DIR}/bin/packages/${{ matrix.build_env.pkgarch }}/awgopenwrt/amneziawg-tools_*.ipk "$out/amneziawg-tools_${postfix}.ipk"
-          cp ${OWRT_DIR}/bin/packages/${{ matrix.build_env.pkgarch }}/awgopenwrt/luci-proto-amneziawg_*.ipk "$out/luci-proto-amneziawg_${postfix}.ipk"
-          cp ${OWRT_DIR}/bin/targets/${{ matrix.build_env.target}}/${{ matrix.build_env.subtarget}}/packages/kmod-amneziawg_*.ipk "$out/kmod-amneziawg_${postfix}.ipk"
+          cp ${OWRT_DIR}/bin/packages/${{ matrix.build_env.pkgarch }}/awgopenwrt/amneziawg-tools_*.apk "$out/amneziawg-tools_${postfix}.apk"
+          cp ${OWRT_DIR}/bin/packages/${{ matrix.build_env.pkgarch }}/awgopenwrt/luci-proto-amneziawg_*.apk "$out/luci-proto-amneziawg_${postfix}.apk"
+          cp ${OWRT_DIR}/bin/targets/${{ matrix.build_env.target}}/${{ matrix.build_env.subtarget}}/packages/kmod-amneziawg_*.apk "$out/kmod-amneziawg_${postfix}.apk"
 
       - name: Compose release body
         run: |
           cat > BODY.md <<EOF
-          Ipk's awg2.0 for ImmortalWrt **v${{ matrix.tag }}**
+          APK's awg2.0 for ImmortalWrt **v${{ matrix.tag }}**
 
           **Target:** \`${{ matrix.build_env.target }}/${{ matrix.build_env.subtarget }}\`
           **Arch:**   \`${{ matrix.build_env.pkgarch }}\`
@@ -168,9 +168,9 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ env.TAG }}
-          name: "AWG2.0 IPK's ${{ env.TAG }} (ImmortalWrt v${{ matrix.tag }} :: ${{ matrix.build_env.target }}/${{ matrix.build_env.subtarget }})"
+          name: "AWG2.0 APK's ${{ env.TAG }} (ImmortalWrt v${{ matrix.tag }} :: ${{ matrix.build_env.target }}/${{ matrix.build_env.subtarget }})"
           body_path: BODY.md
-          files: awgrelease/*.ipk
+          files: awgrelease/*.apk
 
       - name: Cleanup
         run: |
