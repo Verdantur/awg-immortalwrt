@@ -3,12 +3,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=amneziawg-go
-PKG_VERSION:=0.2.12
+PKG_VERSION:=0.2.18
 PKG_RELEASE:=$(AUTORELEASE)
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/amnezia-vpn/amneziawg-go/archive/refs/tags/v${PKG_VERSION}
-PKG_HASH:=df6a9bbd2321e801d67ea2ea94c355a8c6d07477b083ed7f3de215254aed2882
+PKG_HASH:=52f620c45e3bdcae09ef0a17ab4d60e24ac7af2a7b56bd8b1d09ab2219d9d6e7
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
