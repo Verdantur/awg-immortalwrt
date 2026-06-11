@@ -31,7 +31,7 @@ jobs:
 
     steps:
       - name: Checkout workflow repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -60,7 +60,7 @@ jobs:
         run: echo "TAG=${GITHUB_REF_NAME}" >> $GITHUB_ENV
 
       - name: Checkout OpenWRT v${{ matrix.tag }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: immortalwrt/immortalwrt
           ref: v${{ matrix.tag }}
@@ -113,6 +113,7 @@ jobs:
       - name: Configure target & packages
         working-directory: ${{ env.OWRT_DIR }}
         run: |
+          tree ${{ env.OWRT_DIR }}
           wget https://downloads.immortalwrt.org/releases/${{ matrix.tag }}/targets/${target}/${subtarget}/config.buildinfo -O .config
           cat >> .config <<'EOF'
           CONFIG_PACKAGE_amneziawg-tools=y
@@ -144,11 +145,10 @@ jobs:
           tag_name="${TAG:-${{ github.ref_name }}}"
           out="${GITHUB_WORKSPACE}/awgrelease"
           mkdir -p "$out"
+          tree ${OWRT_DIR}/bin
           postfix="${tag_name}_v${{ matrix.tag }}_${{ matrix.build_env.pkgarch}}_${{ matrix.build_env.target}}_${{ matrix.build_env.subtarget}}"
-          cp ${OWRT_DIR}/bin/packages/${{ matrix.build_env.pkgarch }}/awgopenwrt/amneziawg-tools_*.apk "$out/amneziawg-tools_${postfix}.apk"
-          cp ${OWRT_DIR}/bin/packages/${{ matrix.build_env.pkgarch }}/awgopenwrt/luci-proto-amneziawg_*.apk "$out/luci-proto-amneziawg_${postfix}.apk"
-          cp ${OWRT_DIR}/bin/targets/${{ matrix.build_env.target}}/${{ matrix.build_env.subtarget}}/packages/kmod-amneziawg_*.apk "$out/kmod-amneziawg_${postfix}.apk"
-
+          cp ${OWRT_DIR}/bin/ "$out/"
+          
       - name: Compose release body
         run: |
           cat > BODY.md <<EOF
