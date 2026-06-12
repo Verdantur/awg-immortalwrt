@@ -1,0 +1,25 @@
+msgid "AmneziaWG Status"
+msgstr "AmneziaWG 状态"
+
+msgctxt "AmneziaWG instance heading"
+msgid "Instance \"%h\""
+msgstr "实例 "%h""
+
+msgctxt "No AmneziaWG peer handshake yet"
+msgid "Never"
+msgstr "从不"
+
+msgctxt "AmneziaWG keep alive interval"
+msgid "every %ds"
+msgstr "每 %d 秒"
+
+msgctxt "Tooltip displaying full AmneziaWG peer public key"
+msgid "Public key: %h"
+msgstr "公钥：%h"
+
+msgctxt "AmneziaWG listen port"
+msgid "Port %d"
+msgstr "端口 %d"
+
+msgid "No AmneziaWG interfaces configured."
+msgstr "未配置 AmneziaWG 接口。"

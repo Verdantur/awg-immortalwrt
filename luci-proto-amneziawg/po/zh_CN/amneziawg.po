@@ -1,0 +1,146 @@
+msgid "Imports settings from an existing AmneziaWG configuration file"
+msgstr "从现有的 AmneziaWG 配置文件导入设置。"
+
+msgid ""
+"Drag or paste a valid <em>*.conf</em> file below to configure the local "
+"AmneziaWG interface."
+msgstr ""
+"在下方拖放或粘贴一个有效的 <em>*.conf</em> 文件以配置本地 AmneziaWG 接口。"
+
+msgid ""
+"Paste or drag a AmneziaWG configuration (commonly <em>wg0.conf</em>) from "
+"another system below to create a matching peer entry allowing that system to "
+"connect to the local AmneziaWG interface."
+msgstr ""
+"在下方粘贴或拖放另一系统的 AmneziaWG 配置（通常是 <em>wg0.conf</em>），以创建对应的对等节点条目，从而允许该系统连接到本地 AmneziaWG 接口。"
+
+msgid ""
+"To configure fully the local AmneziaWG interface from an existing (e.g. "
+"provider supplied) configuration file, use the <strong><a class=\"full-"
+"import\" href=\"#\">configuration import</a></strong> instead."
+msgstr ""
+"要从现有的（例如提供商提供的）配置文件完全配置本地 AmneziaWG 接口，请改用 <strong><a class=\"full-import\" href=\"#\">配置导入</a></strong>。"
+
+msgid "Paste or drag supplied AmneziaWG configuration file…"
+msgstr "粘贴或拖放提供的 AmneziaWG 配置文件……"
+
+msgid "Paste or drag AmneziaWG peer configuration (wg0.conf) file…"
+msgstr "粘贴或拖放 AmneziaWG 对等节点配置文件 (wg0.conf)……"
+
+msgid "Recommended. IP addresses of the AmneziaWG interface."
+msgstr "建议。AmneziaWG 接口的 IP 地址。"
+
+msgid "Imports settings from an existing AmneziaWG configuration file"
+msgstr "从现有的 AmneziaWG 配置文件导入设置。"
+
+msgid "AmneziaWG Settings"
+msgstr "AmneziaWG 设置"
+
+msgid "Imports settings from an existing AmneziaWG configuration file"
+msgstr "从现有的 AmneziaWG 配置文件导入设置。"
+
+msgid "Imports settings from an existing AmneziaWG configuration file"
+msgstr "从现有的 AmneziaWG 配置文件导入设置。"
+
+msgid "Imports settings from an existing AmneziaWG configuration file"
+msgstr "从现有的 AmneziaWG 配置文件导入设置。"
+
+msgid ""
+"Further information about AmneziaWG interfaces and peers at <a href='https://"
+"docs.amnezia.org/documentation/amnezia-wg'>amnezia.org</a>."
+msgstr ""
+"有关 AmneziaWG 接口和对等节点的更多信息，请访问 <a href='https://docs.amnezia.org/documentation/amnezia-wg'>amnezia.org</a>。"
+
+msgid "Junk packet count."
+msgstr "混淆垃圾数据包数量。"
+
+msgid "Junk packet minimum size."
+msgstr "混淆垃圾数据包最小大小。"
+
+msgid "Junk packet maximum size."
+msgstr "混淆垃圾数据包最大大小。"
+
+msgid "Handshake initiation packet junk header size."
+msgstr "握手初始化数据包的混淆头部大小。"
+
+msgid "Handshake response packet junk header size."
+msgstr "握手响应数据包的混淆头部大小。"
+
+msgid "Cookie reply packet junk header size."
+msgstr "Cookie 应答数据包的混淆头部大小。"
+
+msgid "Transport packet junk header size."
+msgstr "传输数据包的混淆头部大小。"
+
+msgid "Handshake initiation packet type header."
+msgstr "握手初始化数据包的类型头部。"
+
+msgid "Handshake response packet type header."
+msgstr "握手响应数据包的类型头部。"
+
+msgid "Handshake cookie packet type header."
+msgstr "握手 Cookie 数据包的类型头部。"
+
+msgid "Transport packet type header."
+msgstr "传输数据包的类型头部。"
+
+msgid "First special junk packet signature."
+msgstr "第一个特殊混淆数据包的签名。"
+
+msgid "Second special junk packet signature."
+msgstr "第二个特殊混淆数据包的签名。"
+
+msgid "Third special junk packet signature."
+msgstr "第三个特殊混淆数据包的签名。"
+
+msgid "Fourth special junk packet signature."
+msgstr "第四个特殊混淆数据包的签名。"
+
+msgid "Fifth special junk packet signature."
+msgstr "第五个特殊混淆数据包的签名。"
+
+msgid "Enable / Disable peer. Restart amneziawg interface to apply changes."
+msgstr "启用 / 禁用对等节点。请重启 amneziawg 接口以应用更改。"
+
+msgid "AmneziaWG peer is disabled"
+msgstr "AmneziaWG 对等节点已禁用"
+
+msgctxt "Label indicating that AmneziaWG peer is disabled"
+msgid "Disabled"
+msgstr "已禁用"
+
+msgctxt "Label indicating that AmneziaWG peer lacks public key"
+msgid "Key missing"
+msgstr "缺少密钥"
+
+msgctxt "Tooltip displaying full AmneziaWG peer public key"
+msgid "Public key: %h"
+msgstr "公钥：%h"
+
+msgctxt "Label indicating that AmneziaWG peer private key is stored"
+msgid "Private"
+msgstr "私钥"
+
+msgctxt "Label indicating that AmneziaWG peer uses a PSK"
+msgid "PSK"
+msgstr "PSK"
+
+msgid "Required. Public key of the AmneziaWG peer."
+msgstr "必填。AmneziaWG 对等节点的公钥。"
+
+msgid ""
+"Optional. Private key of the AmneziaWG peer. The key is not required for "
+"establishing a connection but allows generating a peer configuration or QR "
+"code if available. It can be removed after the configuration has been "
+"exported."
+msgstr ""
+"可选。AmneziaWG 对等节点的私钥。该密钥不是建立连接所必需的，但如果可用，可用来生成对等节点配置或二维码。导出配置后即可将其删除。"
+
+msgid "Generates a configuration suitable for import on a AmneziaWG peer"
+msgstr "生成适用于导入到 AmneziaWG 对等节点的配置"
+
+msgid ""
+"No fixed interface listening port defined, peers might not be able to "
+"initiate connections to this AmneziaWG instance!"
+msgstr ""
+"未定义固定的接口监听端口，对等节点可能无法发起到此 AmneziaWG 实例的连接！"
